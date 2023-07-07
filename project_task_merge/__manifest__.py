@@ -1,7 +1,7 @@
 
 {
     'name': 'Project task Merge Wizard',
-    'version': '12.0.1.0.1',
+    'version': '14.0.1.0.1',
     'category': 'Project Management',
     'author': 'Odoo SA, '
               'Odoo Community Association (OCA)',

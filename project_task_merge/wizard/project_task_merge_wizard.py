@@ -15,7 +15,6 @@ class ProjectTaskMergeWizard(models.TransientModel):
     target_task_id = fields.Many2one(
         'project.task', string="Merge into an existing task")
 
-    @api.multi
     def merge_tasks(self):
         values = {
             'user_id': self.user_id.id,
@@ -51,7 +50,6 @@ class ProjectTaskMergeWizard(models.TransientModel):
             "res_id": self.target_task_id.id,
         }
 
-    @api.multi
     def merge_description(self):
         return '<br/>'.join(
             self.task_ids.mapped(
@@ -59,7 +57,6 @@ class ProjectTaskMergeWizard(models.TransientModel):
                     task.name, task.description or 'No description'
                 )))
 
-    @api.multi
     def merge_followers(self):
         self.target_task_id.message_subscribe(
             partner_ids=(
